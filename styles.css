@@ -1,0 +1,14 @@
+.grid {
+  display: flex;
+}
+
+.column {
+}
+
+.row {
+  margin: 2px;
+  background: lightgrey;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+}
