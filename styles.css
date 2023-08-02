@@ -1,4 +1,4 @@
-.grid {
+.container {
   display: flex;
 }
 
@@ -6,7 +6,7 @@
 }
 
 .row {
-  margin: 2px;
+  margin: 1px;
   background: lightgrey;
   text-align: center;
   width: 30px;

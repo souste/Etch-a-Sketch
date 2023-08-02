@@ -1,27 +1,28 @@
 const container = document.querySelector(".container");
-// const grid = document.createElement("div");
-// grid.setAttribute("style", "border: 2px solid black; background-color: grey");
-// grid.textContent = "Hello There";
-// container.append(grid);
-
-// let columns = 4;
-// let rows = 4;
-
-// grid.className = "grid";
 
 let columns = 16;
 let rows = 16;
+let row = "";
+let column = "";
 
-let grid = document.createElement("div");
-container.className = "grid";
-
-for (let i = 0; i <= columns; i++) {
-  let column = document.createElement("div");
+for (let i = 1; i <= columns; i++) {
+  column = document.createElement("div");
   column.className = "column";
-  for (let j = 0; j <= rows; j++) {
-    let row = document.createElement("div");
+  for (let j = 1; j <= rows; j++) {
+    row = document.createElement("div");
     row.className = "row";
     column.appendChild(row);
   }
   container.appendChild(column);
+}
+
+let square = document.getElementsByClassName(row);
+
+// highlights one square at a time
+
+let squares = document.getElementsByClassName("row");
+for (let i = 0; i < squares.length; i++) {
+  squares[i].addEventListener("mousedown", () => {
+    squares[i].setAttribute("style", "background-color: red");
+  });
 }
