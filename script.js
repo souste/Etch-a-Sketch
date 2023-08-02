@@ -18,11 +18,11 @@ for (let i = 1; i <= columns; i++) {
 
 let square = document.getElementsByClassName(row);
 
-// highlights one square at a time
+// hover effect on squares to change colour
 
 let squares = document.getElementsByClassName("row");
 for (let i = 0; i < squares.length; i++) {
-  squares[i].addEventListener("mousedown", () => {
+  squares[i].addEventListener("mouseover", () => {
     squares[i].setAttribute("style", "background-color: red");
   });
 }
