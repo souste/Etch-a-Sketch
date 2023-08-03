@@ -20,7 +20,6 @@ function originalSize(input) {
   }
 }
 
-// originalSize(changeSize());
 originalSize(16);
 
 // 02 Hover turns squares red
@@ -35,7 +34,6 @@ for (let i = 0; i < squares.length; i++) {
 }
 
 // Random color guide - https://codepen.io/teresethulin/pen/MWWrdVZ
-// Or this
 
 // 03 Button to Change Size of Grid
 
@@ -48,5 +46,18 @@ function changeSize() {
   while (container.lastElementChild) {
     container.removeChild(container.lastElementChild);
   }
-  originalSize(size);
+  if (size < 100) {
+    originalSize(size);
+  } else {
+    alert("Please select a size less than 100");
+    originalSize(16);
+  }
+  let squares = document.getElementsByClassName("row");
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].addEventListener("mouseover", () => {
+      squares[i].setAttribute("style", "background-color: red");
+    });
+  }
 }
+
+// need the width of the squares to be flexible and the width of the container to be fixed
