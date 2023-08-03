@@ -46,7 +46,7 @@ function changeSize() {
   while (container.lastElementChild) {
     container.removeChild(container.lastElementChild);
   }
-  if (size < 100) {
+  if (size <= 100) {
     originalSize(size);
   } else {
     alert("Please select a size less than 100");
