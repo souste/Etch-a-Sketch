@@ -39,8 +39,10 @@ let sizeButton = document.querySelector(".size-button");
 
 sizeButton.addEventListener("click", changeSize);
 
+let size = "";
+
 function changeSize() {
-  let size = prompt("Please enter a number between 1 and 100", "");
+  size = prompt("Please enter a number between 1 and 100", "");
   while (container.lastElementChild) {
     container.removeChild(container.lastElementChild);
   }
@@ -71,9 +73,7 @@ function changeSize() {
   }
 }
 
-// Button for random colour hover
-
-// Random color guide - https://codepen.io/teresethulin/pen/MWWrdVZ
+// 04 Button for random colour hover
 
 function randomColour() {
   let letters = "0123456789ABCDEF".split("");
@@ -84,15 +84,18 @@ function randomColour() {
   return colour;
 }
 
-console.log(randomColour());
-
 let colourButton = document.querySelector(".colour-button");
 
 colourButton.addEventListener("click", () => {
   let squares = document.getElementsByClassName("row");
   for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener("mouseover", () => {
-      squares[i].setAttribute("style", `background-color: ${randomColour()};`);
+      squares[i].setAttribute(
+        "style",
+        `background-color: ${randomColour()}; width: ${480 / size}px; height: ${
+          480 / size
+        }px; `
+      );
     });
   }
 });
