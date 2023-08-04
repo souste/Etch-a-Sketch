@@ -33,8 +33,6 @@ for (let i = 0; i < squares.length; i++) {
   });
 }
 
-// Random color guide - https://codepen.io/teresethulin/pen/MWWrdVZ
-
 // 03 Button to Change Size of Grid
 
 let sizeButton = document.querySelector(".size-button");
@@ -48,7 +46,6 @@ function changeSize() {
   }
   if (size <= 100) {
     originalSize(size);
-    // Should I perform a css calculation here???
     let squares = document.getElementsByClassName("row");
 
     for (let i = 0; i < squares.length; i++) {
@@ -73,3 +70,29 @@ function changeSize() {
     });
   }
 }
+
+// Button for random colour hover
+
+// Random color guide - https://codepen.io/teresethulin/pen/MWWrdVZ
+
+function randomColour() {
+  let letters = "0123456789ABCDEF".split("");
+  let colour = "#";
+  for (let i = 0; i < 6; i++) {
+    colour += letters[Math.floor(Math.random() * letters.length)];
+  }
+  return colour;
+}
+
+console.log(randomColour());
+
+let colourButton = document.querySelector(".colour-button");
+
+colourButton.addEventListener("click", () => {
+  let squares = document.getElementsByClassName("row");
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].addEventListener("mouseover", () => {
+      squares[i].setAttribute("style", `background-color: ${randomColour()};`);
+    });
+  }
+});
