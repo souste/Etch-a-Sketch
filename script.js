@@ -1,6 +1,6 @@
 // 01 Original Grid with 16 x 16 squares
 
-let container = document.querySelector(".container");
+let grid = document.querySelector(".grid");
 
 let row = "";
 let column = "";
@@ -16,7 +16,7 @@ function originalSize(input) {
       row.className = "row";
       column.appendChild(row);
     }
-    container.appendChild(column);
+    grid.appendChild(column);
   }
 }
 
@@ -55,8 +55,8 @@ let size = "";
 
 function changeSize() {
   size = prompt("Please enter a number between 1 and 100", "");
-  while (container.lastElementChild) {
-    container.removeChild(container.lastElementChild);
+  while (grid.lastElementChild) {
+    grid.removeChild(grid.lastElementChild);
   }
   if (size <= 100) {
     originalSize(size);

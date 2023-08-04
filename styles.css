@@ -1,4 +1,17 @@
-.container {
+.outer-container {
+  display: flex;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin: 10px;
+}
+
+.grid {
   display: flex;
   width: 720px;
   height: 720px;
@@ -15,4 +28,5 @@
   text-align: center;
   width: 45px;
   height: 45px;
+  outline: 1px solid lightgrey;
 }
