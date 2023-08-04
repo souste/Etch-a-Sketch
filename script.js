@@ -65,7 +65,7 @@ function changeSize() {
     for (let i = 0; i < squares.length; i++) {
       squares[i].setAttribute(
         "style",
-        `width: ${480 / size}px; height: ${480 / size}px`
+        `width: ${720 / size}px; height: ${720 / size}px`
       );
     }
   } else {
@@ -85,8 +85,8 @@ function changeSize() {
       if (mouseDown) {
         squares[i].setAttribute(
           "style",
-          `background-color: black; width: ${480 / size}px; height: ${
-            480 / size
+          `background-color: black; width: ${720 / size}px; height: ${
+            720 / size
           }px;`
         );
       }
@@ -122,8 +122,8 @@ colourButton.addEventListener("click", () => {
         squares[i].setAttribute(
           "style",
           `background-color: ${randomColour()}; width: ${
-            480 / size
-          }px; height: ${480 / size}px; `
+            720 / size
+          }px; height: ${720 / size}px; `
         );
       }
     });
@@ -148,8 +148,8 @@ blackButton.addEventListener("click", () => {
       if (mouseDown) {
         squares[i].setAttribute(
           "style",
-          `background-color: black; width: ${480 / size}px; height: ${
-            480 / size
+          `background-color: black; width: ${720 / size}px; height: ${
+            720 / size
           }px; `
         );
       }
@@ -175,8 +175,8 @@ eraseButton.addEventListener("click", () => {
       if (mouseDown) {
         squares[i].setAttribute(
           "style",
-          `background-color: white; width: ${480 / size}px; height: ${
-            480 / size
+          `background-color: white; width: ${720 / size}px; height: ${
+            720 / size
           }px; `
         );
       }
@@ -193,11 +193,14 @@ clearButton.addEventListener("click", () => {
   for (let i = 0; i < squares.length; i++) {
     squares[i].setAttribute(
       "style",
-      `background-color: white; width: ${480 / size}px; height: ${
-        480 / size
+      `background-color: white; width: ${720 / size}px; height: ${
+        720 / size
       }px;`
     );
   }
 });
 
-// Specific Colour Button
+// TO DO
+
+// Add Specific Colour Button
+// Dial for Grid Size instead of button
