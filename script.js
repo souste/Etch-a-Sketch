@@ -135,3 +135,19 @@ eraseButton.addEventListener("click", () => {
     });
   }
 });
+
+// Clear Button
+
+let clearButton = document.querySelector(".clear-button");
+
+clearButton.addEventListener("click", () => {
+  let squares = document.getElementsByClassName("row");
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].setAttribute(
+      "style",
+      `background-color: white; width: ${480 / size}px; height: ${
+        480 / size
+      }px;`
+    );
+  }
+});
