@@ -1,6 +1,6 @@
 // 01 Original Grid with 16 x 16 squares
 
-const container = document.querySelector(".container");
+let container = document.querySelector(".container");
 
 let row = "";
 let column = "";
@@ -29,7 +29,7 @@ let square = document.getElementsByClassName(row);
 let squares = document.getElementsByClassName("row");
 for (let i = 0; i < squares.length; i++) {
   squares[i].addEventListener("mouseover", () => {
-    squares[i].setAttribute("style", "background-color: red");
+    squares[i].setAttribute("style", "background-color: black");
   });
 }
 
@@ -48,6 +48,15 @@ function changeSize() {
   }
   if (size <= 100) {
     originalSize(size);
+    // Should I perform a css calculation here???
+    let squares = document.getElementsByClassName("row");
+
+    for (let i = 0; i < squares.length; i++) {
+      squares[i].setAttribute(
+        "style",
+        `width: ${480 / size}px; height: ${480 / size}px`
+      );
+    }
   } else {
     alert("Please select a size less than 100");
     originalSize(16);
@@ -55,9 +64,12 @@ function changeSize() {
   let squares = document.getElementsByClassName("row");
   for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener("mouseover", () => {
-      squares[i].setAttribute("style", "background-color: red");
+      squares[i].setAttribute(
+        "style",
+        `background-color: black; width: ${480 / size}px; height: ${
+          480 / size
+        }px;`
+      );
     });
   }
 }
-
-// need the width of the squares to be flexible and the width of the container to be fixed

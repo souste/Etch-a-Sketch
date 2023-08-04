@@ -1,13 +1,16 @@
 .container {
   display: flex;
+  width: 480px;
+  border: 2px solid black;
 }
 
 .column {
+  display: flex;
+  flex-direction: column;
 }
 
 .row {
-  margin: 1px;
-  background: lightgrey;
+  display: flex;
   text-align: center;
   width: 30px;
   height: 30px;
