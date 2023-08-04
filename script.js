@@ -117,3 +117,21 @@ blackButton.addEventListener("click", () => {
     });
   }
 });
+
+// Erase Button
+
+let eraseButton = document.querySelector(".erase-button");
+
+eraseButton.addEventListener("click", () => {
+  let squares = document.getElementsByClassName("row");
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].addEventListener("mouseover", () => {
+      squares[i].setAttribute(
+        "style",
+        `background-color: white; width: ${480 / size}px; height: ${
+          480 / size
+        }px; `
+      );
+    });
+  }
+});
