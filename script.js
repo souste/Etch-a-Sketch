@@ -35,8 +35,8 @@ function currentColour(colour) {
       mouseDown = true;
       squares[i].setAttribute(
         "style",
-        `background-color: ${colour}; width: ${720 / size}px; height: ${
-          720 / size
+        `background-color: ${colour}; width: ${600 / size}px; height: ${
+          600 / size
         }px; `
       );
     });
@@ -47,8 +47,8 @@ function currentColour(colour) {
       if (mouseDown) {
         squares[i].setAttribute(
           "style",
-          `background-color: ${colour}; width: ${720 / size}px; height: ${
-            720 / size
+          `background-color: ${colour}; width: ${600 / size}px; height: ${
+            600 / size
           }px; `
         );
       }
@@ -78,7 +78,7 @@ function changeSize() {
     for (let i = 0; i < squares.length; i++) {
       squares[i].setAttribute(
         "style",
-        `width: ${720 / size}px; height: ${720 / size}px`
+        `width: ${600 / size}px; height: ${600 / size}px`
       );
     }
   } else {
@@ -108,8 +108,8 @@ colourButton.addEventListener("click", () => {
       mouseDown = true;
       squares[i].setAttribute(
         "style",
-        `background-color: ${randomColour()}; width: ${720 / size}px; height: ${
-          720 / size
+        `background-color: ${randomColour()}; width: ${600 / size}px; height: ${
+          600 / size
         }px; `
       );
     });
@@ -121,8 +121,8 @@ colourButton.addEventListener("click", () => {
         squares[i].setAttribute(
           "style",
           `background-color: ${randomColour()}; width: ${
-            720 / size
-          }px; height: ${720 / size}px; `
+            600 / size
+          }px; height: ${600 / size}px; `
         );
       }
     });
@@ -170,8 +170,8 @@ clearButton.addEventListener("click", () => {
   for (let i = 0; i < squares.length; i++) {
     squares[i].setAttribute(
       "style",
-      `background-color: white; width: ${720 / size}px; height: ${
-        720 / size
+      `background-color: white; width: ${600 / size}px; height: ${
+        600 / size
       }px;`
     );
   }
