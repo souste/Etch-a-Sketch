@@ -86,31 +86,8 @@ function changeSize() {
     alert("Please select a size less than 100");
     originalSize(16);
   }
-  let squares = document.getElementsByClassName("row");
-  for (let i = 0; i < squares.length; i++) {
-    squares[i].addEventListener("mousedown", () => {
-      mouseDown = true;
-      squares[i].setAttribute(
-        "style",
-        `background-color: black; width: ${720 / size}px; height: ${
-          720 / size
-        }px;`
-      );
-    });
-    squares[i].addEventListener("mouseup", () => {
-      mouseDown = false;
-    });
-    squares[i].addEventListener("mouseover", () => {
-      if (mouseDown) {
-        squares[i].setAttribute(
-          "style",
-          `background-color: black; width: ${720 / size}px; height: ${
-            720 / size
-          }px;`
-        );
-      }
-    });
-  }
+
+  currentColour("black");
 }
 
 // RANDOM COLOUR BUTTON
