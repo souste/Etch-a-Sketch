@@ -40,7 +40,6 @@ function currentColour(colour) {
         }px; `
       );
     });
-
     squares[i].addEventListener("mouseup", () => {
       mouseDown = false;
     });
@@ -86,7 +85,6 @@ function changeSize() {
     alert("Please select a size less than 100");
     originalSize(16);
   }
-
   currentColour("black");
 }
 
