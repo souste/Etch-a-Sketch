@@ -1,4 +1,4 @@
-// 01 Original Grid with 16 x 16 squares
+// 01 ORIGINAL GRID WITH 16 X 16 SQUARES
 
 let grid = document.querySelector(".grid");
 
@@ -22,30 +22,44 @@ function originalSize(input) {
 
 originalSize(16);
 
-// 02 Hover turns squares red
+// 02 FUNCTION TO CHANGE COLOUR (REFACTORED)
+
+let square = document.getElementsByClassName(row);
+let squares = document.getElementsByClassName("row");
 
 let mouseDown = false;
 
-let square = document.getElementsByClassName(row);
+function currentColour(colour) {
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].addEventListener("mousedown", () => {
+      mouseDown = true;
+      squares[i].setAttribute(
+        "style",
+        `background-color: ${colour}; width: ${720 / size}px; height: ${
+          720 / size
+        }px; `
+      );
+    });
 
-let squares = document.getElementsByClassName("row");
-for (let i = 0; i < squares.length; i++) {
-  squares[i].addEventListener("mousedown", () => {
-    mouseDown = true;
-  });
-
-  squares[i].addEventListener("mouseup", () => {
-    mouseDown = false;
-  });
-
-  squares[i].addEventListener("mouseover", () => {
-    if (mouseDown) {
-      squares[i].setAttribute("style", "background-color: black");
-    }
-  });
+    squares[i].addEventListener("mouseup", () => {
+      mouseDown = false;
+    });
+    squares[i].addEventListener("mouseover", () => {
+      if (mouseDown) {
+        squares[i].setAttribute(
+          "style",
+          `background-color: ${colour}; width: ${720 / size}px; height: ${
+            720 / size
+          }px; `
+        );
+      }
+    });
+  }
 }
 
-// 03 Button to Change Size of Grid
+currentColour("black");
+
+// 03 BUTTON TO CHANGE SIZE OF GRID
 
 let sizeButton = document.querySelector(".size-button");
 
@@ -76,8 +90,13 @@ function changeSize() {
   for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener("mousedown", () => {
       mouseDown = true;
+      squares[i].setAttribute(
+        "style",
+        `background-color: black; width: ${720 / size}px; height: ${
+          720 / size
+        }px;`
+      );
     });
-
     squares[i].addEventListener("mouseup", () => {
       mouseDown = false;
     });
@@ -94,7 +113,7 @@ function changeSize() {
   }
 }
 
-// 04 Button for random colour hover
+// RANDOM COLOUR BUTTON
 
 function randomColour() {
   let letters = "0123456789ABCDEF".split("");
@@ -112,8 +131,13 @@ colourButton.addEventListener("click", () => {
   for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener("mousedown", () => {
       mouseDown = true;
+      squares[i].setAttribute(
+        "style",
+        `background-color: ${randomColour()}; width: ${720 / size}px; height: ${
+          720 / size
+        }px; `
+      );
     });
-
     squares[i].addEventListener("mouseup", () => {
       mouseDown = false;
     });
@@ -130,97 +154,39 @@ colourButton.addEventListener("click", () => {
   }
 });
 
-// Button to revert back to black
+// BLACK BUTTON
 
 let blackButton = document.querySelector(".black-button");
 
 blackButton.addEventListener("click", () => {
-  let squares = document.getElementsByClassName("row");
-  for (let i = 0; i < squares.length; i++) {
-    squares[i].addEventListener("mousedown", () => {
-      mouseDown = true;
-    });
-
-    squares[i].addEventListener("mouseup", () => {
-      mouseDown = false;
-    });
-    squares[i].addEventListener("mouseover", () => {
-      if (mouseDown) {
-        squares[i].setAttribute(
-          "style",
-          `background-color: black; width: ${720 / size}px; height: ${
-            720 / size
-          }px; `
-        );
-      }
-    });
-  }
+  let colour = "black";
+  currentColour(colour);
 });
 
-// Colour Picker Button
+// COLOUR PICKER BUTTON
 
 let colourParent = document.querySelector(".colour-picker");
 let colourPicker = new Picker(colourParent);
 
 let colourLog;
+
 colourParent.addEventListener("click", () => {
   newColour = colourPicker.onChange = function (color) {
     colourLog = colourParent.style.background = color.rgbaString;
   };
-  let squares = document.getElementsByClassName("row");
-  for (let i = 0; i < squares.length; i++) {
-    squares[i].addEventListener("mousedown", () => {
-      mouseDown = true;
-    });
-
-    squares[i].addEventListener("mouseup", () => {
-      mouseDown = false;
-    });
-    squares[i].addEventListener("mouseover", () => {
-      if (mouseDown) {
-        squares[i].setAttribute(
-          "style",
-          `background-color: ${colourLog}; width: ${720 / size}px; height: ${
-            720 / size
-          }px; `
-        );
-      }
-    });
-  }
+  currentColour(colourLog);
 });
 
-// colourPicker.addEventListener("click", (colour) => {
-//   colourParent.style.background = color.rgbaString;
-// });
-
-// Erase Button
+// ERASER BUTTON
 
 let eraseButton = document.querySelector(".erase-button");
 
 eraseButton.addEventListener("click", () => {
-  let squares = document.getElementsByClassName("row");
-  for (let i = 0; i < squares.length; i++) {
-    squares[i].addEventListener("mousedown", () => {
-      mouseDown = true;
-    });
-
-    squares[i].addEventListener("mouseup", () => {
-      mouseDown = false;
-    });
-    squares[i].addEventListener("mouseover", () => {
-      if (mouseDown) {
-        squares[i].setAttribute(
-          "style",
-          `background-color: white; width: ${720 / size}px; height: ${
-            720 / size
-          }px; `
-        );
-      }
-    });
-  }
+  let colour = "white";
+  currentColour(colour);
 });
 
-// Clear Button
+// CLEAR BUTTON
 
 let clearButton = document.querySelector(".clear-button");
 
@@ -238,5 +204,4 @@ clearButton.addEventListener("click", () => {
 
 // TO DO
 
-// Add Specific Colour Button
 // Dial for Grid Size instead of button
