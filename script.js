@@ -176,7 +176,3 @@ clearButton.addEventListener("click", () => {
     );
   }
 });
-
-// TO DO
-
-// Dial for Grid Size instead of button
