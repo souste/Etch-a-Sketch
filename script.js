@@ -157,6 +157,42 @@ blackButton.addEventListener("click", () => {
   }
 });
 
+// Colour Picker Button
+
+let colourParent = document.querySelector(".colour-picker");
+let colourPicker = new Picker(colourParent);
+
+let colourLog;
+colourParent.addEventListener("click", () => {
+  newColour = colourPicker.onChange = function (color) {
+    colourLog = colourParent.style.background = color.rgbaString;
+  };
+  let squares = document.getElementsByClassName("row");
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].addEventListener("mousedown", () => {
+      mouseDown = true;
+    });
+
+    squares[i].addEventListener("mouseup", () => {
+      mouseDown = false;
+    });
+    squares[i].addEventListener("mouseover", () => {
+      if (mouseDown) {
+        squares[i].setAttribute(
+          "style",
+          `background-color: ${colourLog}; width: ${720 / size}px; height: ${
+            720 / size
+          }px; `
+        );
+      }
+    });
+  }
+});
+
+// colourPicker.addEventListener("click", (colour) => {
+//   colourParent.style.background = color.rgbaString;
+// });
+
 // Erase Button
 
 let eraseButton = document.querySelector(".erase-button");
