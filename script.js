@@ -170,7 +170,7 @@ clearButton.addEventListener("click", () => {
   for (let i = 0; i < squares.length; i++) {
     squares[i].setAttribute(
       "style",
-      `background-color: white; width: ${600 / size}px; height: ${
+      `background-color: rgb(216, 228, 213); width: ${600 / size}px; height: ${
         600 / size
       }px;`
     );
