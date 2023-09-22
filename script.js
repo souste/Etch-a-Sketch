@@ -157,7 +157,7 @@ colourParent.addEventListener("click", () => {
 let eraseButton = document.querySelector(".erase-button");
 
 eraseButton.addEventListener("click", () => {
-  let colour = "white";
+  let colour = "rgb(216, 228, 213)";
   currentColour(colour);
 });
 
